@@ -1,0 +1,19 @@
+/* Playground css file */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* h1{
+    background-color: chartreuse;
+} */
+div{
+    text-align: center;
+}
+.test{
+    /* background-color: var(--color); */
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
