@@ -1,0 +1,29 @@
+<!-- Checkerboard creation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrapper">
+    {% for x in range(0, num_ver): %}
+        {% if (x%2 == 0): %}
+            {% for y in range(0, num_times//2): %}
+                <div class="test" style="background-color: {{start_color}};"></div>
+                <div class="test" style="background-color: {{end_color}};"></div>
+            {% endfor %}
+        {% endif %}
+        {% if (x%2 == 1): %}
+            {% for y in range(0, num_times//2): %}
+                <div class="test" style="background-color: {{end_color}};"></div>
+                <div class="test" style="background-color: {{start_color}};"></div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </div>
+</body>
+</html>
