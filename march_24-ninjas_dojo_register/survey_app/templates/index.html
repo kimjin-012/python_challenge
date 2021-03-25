@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <form action="/result" method="post">
+                {% csrf_token %}
+                Your name: <input type='text' name="name">
+                <br>
+                Dojo Location: <select class= "loc" name="location">
+                    <option value="seattle">Seattle</option>
+                    <option value="egypt">Egypt</option>
+                    <option value="Hawaii">hawaii</option>
+                </select>
+                <br>
+                Favorite Language: <select class="lan" name="lang">
+                    <option value="python">Python</option>
+                    <option value="javas">Javascript</option>
+                    <option value="csharp">C#</option>
+                </select>
+                <p>Comment (optional):</p> 
+                <input class="opt" type="text" name="comment">
+                <br>
+                <button type="submit">Button</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
