@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: 970px;
+    text-align: center;
+}
+.wrapper h1{
+    margin-left: 100px;
+}

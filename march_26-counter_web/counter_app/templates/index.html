@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Counts</h1>
+    {{request.session.counts}}
+    <form action="/delete" method="POST">
+        {% csrf_token %}
+        <button>Reset</button>
+    </form>
+    <form action="/plus" method="POST">
+        {% csrf_token %}
+        <button>+2</button>
+    </form>
+    <form action="/incre" method="POST">
+        {% csrf_token %}
+        Add this much: <input type="text" name="add">
+        <button type="submit">Add it</button>
+    </form>
+    <br>
+    <p>How many times have you visit here? : {{request.session.visit}}</p>
+</body>
+</html>
