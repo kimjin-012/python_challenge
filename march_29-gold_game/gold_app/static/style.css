@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.current p{
+    display: inline-block;
+    vertical-align: center;
+}
+.amount{
+    border: 2px solid black;
+    width: 80px;
+    text-align: center;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.wrapper .option{
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top:10px;
+    border: 2px solid black;
+}
+    .option h1,h2{
+        margin-top: 20px;
+    }
+    .option button{
+        margin-top: 30px;
+    }
+
+.action .title{
+    margin-top: 20px;
+}
+    .action .activity{
+        border: 2px solid black;
+        height: 120px;
+        width: 855px;
+        overflow: auto;
+    }
+
+.reset button{
+    margin-top: 20px;
+}

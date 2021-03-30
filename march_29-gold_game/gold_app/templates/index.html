@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="current">
+            <p class="display">Your Gold:</p>
+            <p class="amount">{{request.session.current}}</p>
+        </div>
+        <div class="option">
+            <h1>Farm</h1>
+            <h2>(earns 10-20 golds)</h2>
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="which_work" value="farm">
+                <button type="submit">Find Gold!</button>
+            </form>
+        </div>
+        <div class="option">
+            <h1>Cave</h1>
+            <h2>(earns 5-10 golds)</h2>
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="which_work" value="cave">
+                <button type="submit">Find Gold!</button>
+            </form>
+        </div>
+        <div class="option">
+            <h1>House</h1>
+            <h2>(earns 2-5 golds)</h2>
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="which_work" value="house">
+                <button type="submit">Find Gold!</button>
+            </form>
+        </div>
+        <div class="option">
+            <h1>Casino</h1>
+            <h2>(earns/takes 0-50 golds)</h2>
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="which_work" value="casino">
+                <button type="submit">Find Gold!</button>
+            </form>
+        </div>
+        <div class="action">
+            <p class="title">Activities:</p>
+            <div class="activity">
+                {% for act in request.session.action %}
+                    {% if request.session.gain == True %}
+                    <p class="positive" style="color: green;">{{act}}</p>
+                    {% elif request.session.gain == False %}
+                    <p  style="color: red;">{{act}}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="reset">
+            <form action="/delete" method="POST">
+                {% csrf_token %}
+                <button>Reset</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
