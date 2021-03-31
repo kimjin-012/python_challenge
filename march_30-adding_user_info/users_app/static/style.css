@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    width: 500px;
+    border: 1px solid black;
+    margin-left: 700px;
+}
+td,th{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    background-color: #cccccc;
+}
+tr:nth-child(even){
+    background-color: #eee;
+}
+
+.wrapper2{
+    border-top: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
+    width: 1000px;
+    margin-left: 450px;
+}
+.inputs{
+    width: 700px;
+    margin-left: 100px;
+}
+.inputs p{
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+}
