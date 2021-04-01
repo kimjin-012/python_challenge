@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+.title{
+    margin-left: 50px;
+}
+.lname{
+    margin-left: 2px;
+}
+.pnote,.note{
+    display: inline-block;
+    vertical-align: top;
+}
+.note{
+    margin-left: 33px;
+    height: 100px;
+    width: 180px;
+}
+button{
+    margin-top: 10px;
+    margin-left: 83px;
+}
+.input,.authortable{
+    display: inline-block;
+    vertical-align: top;
+}
+.authortable{
+    margin-left: 100px;
+}
+table{
+    border: 1px solid black;
+}
+    th{
+        width: 100px;
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    td{
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }

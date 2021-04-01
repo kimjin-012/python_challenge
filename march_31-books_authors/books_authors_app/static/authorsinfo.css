@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+h2{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+    .notesinfo{
+        display: inline-block;
+        vertical-align: center;
+    }
+
+ul{
+    margin-left: 50px;
+    font-size: 20px;
+}
+form{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+    .form-select{
+        width: 150px;
+    }
+    .form-select,button{
+        display: inline-block;
+        vertical-align: center;
+    }

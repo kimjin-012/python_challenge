@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'authors.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="input">
+            <h1>Add an Author</h1>
+            <form action="/addauthors" method="POST">
+                {% csrf_token %}
+                <p>First Name: <input type="text" name="fname"></p>
+                <p>Last Name: <input class="lname" type="text" name="lname"></p>
+                <p class="pnote">Notes: </p>
+                <textarea class="note" type="text" name='notes'></textarea>
+                <br>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div class="authortable">
+            <table class="table table-sstriped">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            {% for hum in person_info %}
+                <tr>
+                    <td>{{hum.id}}</td>
+                    <td>{{hum.first_name}} {{hum.last_name}}</td>
+                    <td><a href="/authors/{{hum.id}}">View</a></td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
