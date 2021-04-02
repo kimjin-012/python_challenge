@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Add a New Show</h1>
+        <a href="/shows">Go Back</a>
+        <form action="/add" method="POST">
+            {% csrf_token %}
+            <p>Title:</p>
+            <input class="ttext" type="text" name="title">
+            <br>
+            <div class="first">
+            <p>Network:</p>
+            <input type="text" name="network">
+            </div> 
+            <div class="first">
+            <p>Release Date</p>
+            <input type="date" id="release" name="release">
+            </div>
+            <p>Description</p>
+            <input class="desctext" type="text" name="desc">
+            <br>
+            <button type="submit">Create</button>
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{message}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

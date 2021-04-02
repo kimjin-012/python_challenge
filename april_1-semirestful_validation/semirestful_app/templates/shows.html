@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shows.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>All Shows</h1>
+        <table class="table table-striped">
+            <tr>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Network</td>
+                <td>Release Date</td>
+                <td>Actions</td>
+            </tr>
+            {% for watch in objects %}
+            <tr>
+                <td>{{watch.id}}</td>
+                <td>{{watch.title}}</td>
+                <td>{{watch.network}}</td>
+                <td>{{watch.date}}</td>
+                <td><a href="/shows/{{watch.id}}">Show</a> | <a href="/shows/{{watch.id}}/edit">Edit</a> | <a href="/shows/{{watch.id}}/destroy">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/shows/new">Add a New Show</a>
+    </div>
+</body>
+</html>

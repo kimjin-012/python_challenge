@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'display.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>TV Show {{objects.id}}</h1>
+        <a class="goback" href="/shows">Go Back</a>
+        <p>Title: {{objects.title}}</p>
+        <p>Network: {{objects.network}}</p>
+        <p>Release Date: {{objects.date}}</p>
+        <p>Description: {{objects.desc}}</p>
+        <p class="lupdate">Last Update: {{objects.updated_at}}</p>
+        <a href="/shows/{{objects.id}}/edit">Edit</a> | <a href="/shows/{{objects.id}}/destroy">Delete</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'edit.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Edit Show {{objects.id}}</h1>
+        <a href="/shows">Go Back</a>
+        <form action="/editshow" method="POST">
+            {% csrf_token %}
+            <p>Title:</p>
+            <input class="ttext" type="text" name="title" value="{{objects.title}}">
+            <br>
+            <div class="first">
+            <p>Network:</p>
+            <input type="text" name="network" value="{{objects.network}}">
+            </div>
+            <div class="first">
+            <p>Release Date</p>
+            <input type="date" id="release" name="release" value="{{objects.date|date:'Y-m-d'}}">
+            </div>
+            <p>Description</p>
+            <input class="desctext" type="text" name="desc" value="{{objects.desc}}">
+            <input type="hidden" name="showid" value="{{objects.id}}">
+            <br>
+            <button type="submit">Update</button>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </form>
+        <a class="goshow" href="/shows/{{objects.id}}">Go to Show</a>
+    </div>
+</body>
+</html>

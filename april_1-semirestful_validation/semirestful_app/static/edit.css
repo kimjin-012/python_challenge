@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    padding: 20px;
+    padding-left: 50px;
+    width: 970px;
+}
+h1,a{
+    display: inline-block;
+    vertical-align: top;
+}
+a{
+    margin-left: 70px;
+}
+.ttext{
+    width: 365px;
+    margin-bottom: 20px;
+}
+.first{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.desctext{
+    width: 365px;
+    height: 200px;
+}
+button{
+    width: 100px;
+    margin-left: 130px;
+    margin-top: 20px;
+}
+.goshow{
+    margin-top: 20px;
+    margin-left: 140px;
+}
